@@ -1,0 +1,24 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] },
+    { "source": "/downloads/(.*)", "headers": [{ "key": "Content-Disposition", "value": "attachment" }] },
+    { "source": "/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+    ] }
+  ],
+  "redirects": [
+    { "source": "/new", "destination": "/", "permanent": true },
+    { "source": "/store", "destination": "https://fallingleavesband.bandcamp.com/merch", "permanent": true },
+    { "source": "/tour-dates", "destination": "/live", "permanent": true },
+    { "source": "/albums", "destination": "/music", "permanent": true },
+    { "source": "/dvds", "destination": "/music", "permanent": true },
+    { "source": "/videos", "destination": "/music", "permanent": true },
+    { "source": "/lineup", "destination": "/press", "permanent": true },
+    { "source": "/biography", "destination": "/press", "permanent": true },
+    { "source": "/contacts", "destination": "/#contact", "permanent": true },
+    { "source": "/product/:slug*", "destination": "https://fallingleavesband.bandcamp.com/merch", "permanent": true }
+  ]
+}
